@@ -23,8 +23,8 @@ public class RobotMap {
 
   public static boolean leftDrivetrainEncoder_Reverse = false;
   public static boolean rightDrivetrainEncoder_Reverse = true;
-  
-  public static double drivetrainPower = 0.85;
+  //adjust torque here
+  public static double drivetrainPower = 0.75;
   public static double fineDrivetrainPower = 0.8;
 
 
