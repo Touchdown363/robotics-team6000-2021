@@ -16,7 +16,7 @@ import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Magazine;
 import frc.robot.subsystems.Shooter;
-// import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.Limelight;
 import edu.wpi.first.cameraserver.*;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
   public static Elevator elevator;
   public static Magazine magazine;
   public static Shooter shooter;
-  // public static Limelight limelight;
+  public static Limelight limelight;
   public static double leftStickVal;
   public static double rightStickVal;
   public static Boolean autonomous;
@@ -83,7 +83,7 @@ public class Robot extends TimedRobot {
     elevator = new Elevator();
     magazine = new Magazine();
     shooter = new Shooter();
-    // limelight = new Limelight();
+    limelight = new Limelight();
 
     XboxController0 = new XboxController(RobotMap.XboxController0);
     XboxController1 = new XboxController(RobotMap.XboxController1);
@@ -99,10 +99,10 @@ public class Robot extends TimedRobot {
 
     RobotMap.collectMode = false;
 
-    // limelight.activateUSBCamera();
-    // limelight.turnOffLED();
+    limelight.activateUSBCamera();
+    limelight.turnOffLED();
 
-    // table.getEntry("ledMode").setNumber(1);
+    table.getEntry("ledMode").setNumber(1);
 
 
     // Vision Initialization
@@ -127,8 +127,8 @@ public class Robot extends TimedRobot {
     System.out.println("Number of Balls");
     System.out.println(RobotMap.numberOfBalls);
 
-    // limelight.refreshValues();
-    // refreshValues();
+    limelight.refreshValues();
+    refreshValues();
 
 
     // elevator.liftMotor.set(RobotMap.liftPower);
@@ -160,7 +160,7 @@ public class Robot extends TimedRobot {
     changeAutonomous = false;
     super.autonomousInit();
 
-    // limelight.m_autoSelected = limelight.m_chooser.getSelected();
+    limelight.m_autoSelected = limelight.m_chooser.getSelected();
     m_autoSelected = m_chooser.getSelected();
 
     // intake.intakeExtender.set(0.6);
@@ -202,7 +202,7 @@ public class Robot extends TimedRobot {
     System.out.println(magazine.magazineEncoder.getDistance());
     // Drivetrain
 
-    // limelight.updateTrackingData();
+    limelight.updateTrackingData();
 
     updateTrackingData();
 
