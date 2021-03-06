@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Elevator;
+//import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Magazine;
 import frc.robot.subsystems.Shooter;
@@ -41,7 +41,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static Intake intake;
-  public static Elevator elevator;
+//  public static Elevator elevator;
   public static Magazine magazine;
   public static Shooter shooter;
   public static Limelight limelight;
@@ -80,7 +80,7 @@ public class Robot extends TimedRobot {
     // This is called once when the robot code initializes
     drivetrain = new Drivetrain();
     intake = new Intake();
-    elevator = new Elevator();
+    //elevator = new Elevator();
     magazine = new Magazine();
     shooter = new Shooter();
     limelight = new Limelight();
@@ -284,7 +284,7 @@ public class Robot extends TimedRobot {
       RobotMap.collectMode = ! RobotMap.collectMode;
     }
 
-
+/*
     if (XboxController1.getAButton()) {
       System.out.println("Extending...");
       elevator.extendMotor.set(RobotMap.extendPower);
@@ -300,9 +300,9 @@ public class Robot extends TimedRobot {
     else {
       elevator.liftMotor.set(0.0);
     }
-  
+  */
     // Extend intake roller
-    while (XboxController1.getBumperPressed(Hand.kLeft)) {
+    /*while (XboxController1.getBumperPressed(Hand.kLeft)) {
       intake.intakeExtender.set(RobotMap.rollerExtendPower);
     }
   
@@ -319,7 +319,7 @@ public class Robot extends TimedRobot {
     while (XboxController1.getBumperReleased(Hand.kRight)) {
       intake.intakeExtender.set(0.0);
     }
-
+*/
 
 
 

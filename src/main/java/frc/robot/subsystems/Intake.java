@@ -10,25 +10,25 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.Timer;
+//import edu.wpi.first.wpilibj.Timer;
 
 public class Intake extends Subsystem {
     public Spark intakeRoller;
-    public Spark intakeExtender;
+    //public Spark intakeExtender;
 
     public Intake() {
         intakeRoller = new Spark(RobotMap.intakeRoller);
         intakeRoller.setInverted(true);
         intakeRoller.setSafetyEnabled(false);
-        intakeExtender = new Spark(RobotMap.intakeExtender);
+        //intakeExtender = new Spark(RobotMap.intakeExtender);
     }
 
-    public void extendIntake() {
+    /*public void extendIntake() {
         intakeExtender.set(0.6);
         Timer.delay(3);
         intakeExtender.set(0.0);
     }
-
+*/
     @Override
     public void initDefaultCommand() {
     }

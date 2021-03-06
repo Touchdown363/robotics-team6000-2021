@@ -31,19 +31,19 @@ public class RobotMap {
   // Shooter
   //public static int topShooter = 4;
  // public static int bottomShooter = 2;
-  public static int mainShooter = 3;
+  public static int mainShooter = 4;
 
   public static double shooterPower = 0.75;
 
 
   // Intake
   public static int intakeRoller = 7;
-  public static int intakeExtender = 8;
+  //public static int intakeExtender = 8;
 
   public static double intakeSpeed = 0.8;
   public static double intakeSpeedAdjusted = 0.8;
 
-  public static double rollerExtendPower = 0.3;
+  //public static double rollerExtendPower = 0.3;
 
 
   // Magazine
@@ -71,12 +71,12 @@ public class RobotMap {
 
 
   // Elevator
-  public static int extendElevator = 5;
+  /*public static int extendElevator = 5;
   public static int liftRobot = 6;
 
   public static double extendPower = 0.5;
   public static double liftPower = 0.8;
-
+*/
 
   // Controller Ports
   public static int XboxController0 = 0;
