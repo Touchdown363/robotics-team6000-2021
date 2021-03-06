@@ -243,9 +243,9 @@ public class Robot extends TimedRobot {
 
 
     // Shooter
-  
-    shooter.topMotor.set(XboxController0.getTriggerAxis(Hand.kRight) * RobotMap.shooterPower);
-    shooter.bottomMotor.set(XboxController0.getTriggerAxis(Hand.kRight) * RobotMap.shooterPower);
+    shooter.mainMotor.set(XboxController0.getTriggerAxis(Hand.kRight) * RobotMap.shooterPower);
+   // shooter.topMotor.set(XboxController0.getTriggerAxis(Hand.kRight) * RobotMap.shooterPower);
+   // shooter.bottomMotor.set(XboxController0.getTriggerAxis(Hand.kRight) * RobotMap.shooterPower);
 
     // Intake
 

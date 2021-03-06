@@ -12,16 +12,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 public class Shooter extends Subsystem {
-  public Spark topMotor;
-  public Spark bottomMotor;
-
+  public Spark mainMotor;
+ // public Spark topMotor;
+  // public Spark bottomMotor;
+  
   public Shooter() {
-    topMotor = new Spark(RobotMap.topShooter);
-    bottomMotor = new Spark(RobotMap.bottomShooter);
+    mainMotor = new Spark(RobotMap.mainShooter);
+   // topMotor = new Spark(RobotMap.topShooter);
+    // bottomMotor = new Spark(RobotMap.bottomShooter);
 
     // Ensures that motors keep running during Timer.delay()
-    topMotor.setSafetyEnabled(false);
-    bottomMotor.setSafetyEnabled(false);
+    //topMotor.setSafetyEnabled(false);
+    //bottomMotor.setSafetyEnabled(false);
+    mainMotor.setSafetyEnabled(false);
 
   }
 
