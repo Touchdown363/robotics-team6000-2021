@@ -85,21 +85,21 @@
      m_LimelightDriveCommand = drive_cmd;
    }
 
-   // public void activateUSBCamera() {
-   //   table.getEntry("stream").setNumber(0);
-   // }
+    public void activateUSBCamera() {
+      table.getEntry("stream").setNumber(0);
+    }
 
-   // public void turnOnLED() {
-   //   table.getEntry("ledMode").setNumber(3);
-   // }
+    public void turnOnLED() {
+      table.getEntry("ledMode").setNumber(3);
+    }
 
-   // public void turnOffLED() {
-   //   table.getEntry("ledMode").setNumber(1);
-   // }
+    public void turnOffLED() {
+      table.getEntry("ledMode").setNumber(1);
+    }
 
-   // public void blinkLED() {
-   //   table.getEntry("ledMode").setNumber(2);
-   // }
+    public void blinkLED() {
+      table.getEntry("ledMode").setNumber(2);
+    }
   
    @Override
    public void initDefaultCommand() {

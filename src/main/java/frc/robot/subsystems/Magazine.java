@@ -1,6 +1,5 @@
 package frc.robot.subsystems;
 
-import com.revrobotics.ColorSensorV3;
 
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.Spark;
@@ -9,6 +8,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.Timer;
+
+import com.revrobotics.ColorSensorV3;
+
 import edu.wpi.first.wpilibj.Encoder;
 
 

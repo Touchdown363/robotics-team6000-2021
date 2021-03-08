@@ -98,7 +98,7 @@ public class Robot extends TimedRobot {
     RobotMap.intakeSpeedAdjusted = RobotMap.intakeSpeed;
 
     RobotMap.collectMode = false;
-
+//note: possibly comment out the next 2 lines
     limelight.activateUSBCamera();
     limelight.turnOffLED();
 
@@ -128,7 +128,6 @@ public class Robot extends TimedRobot {
     System.out.println(RobotMap.numberOfBalls);
 
     limelight.refreshValues();
-    refreshValues();
 
 
     // elevator.liftMotor.set(RobotMap.liftPower);
