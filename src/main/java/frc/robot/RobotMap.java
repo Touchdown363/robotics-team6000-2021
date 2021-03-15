@@ -37,7 +37,7 @@ public class RobotMap {
 
 
   // Intake
-  public static int intakeRoller = 7;
+  public static int intakeRoller = 2;
   //public static int intakeExtender = 8;
 
   public static double intakeSpeed = 0.8;
