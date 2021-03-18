@@ -120,12 +120,12 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     // This is called every period regardless of mode
-    if (RobotMap.activateSensor) {
-      magazine.checkColor();
-    }
-    SmartDashboard.putNumber("Number of Balls", RobotMap.numberOfBalls);
-    System.out.println("Number of Balls");
-    System.out.println(RobotMap.numberOfBalls);
+    // if (RobotMap.activateSensor) {
+    //   magazine.checkColor();
+    // }
+    // SmartDashboard.putNumber("Number of Balls", RobotMap.numberOfBalls);
+    // System.out.println("Number of Balls");
+    // System.out.println(RobotMap.numberOfBalls);
 
     limelight.refreshValues();
 
@@ -323,17 +323,17 @@ public class Robot extends TimedRobot {
 
 
     // Start Button - Shoot One Ball
-    if (XboxController0.getStartButtonPressed()) {
-      RobotMap.intakeSpeedAdjusted = RobotMap.intakeSpeed;
-      if (RobotMap.rotationMode) {
-        magazine.rotateMagazine();
-        RobotMap.numberOfBalls--;
-      }
-      else {
-        // intake.intakeRoller.set(RobotMap.intakeSpeedAdjusted);
-        magazine.shootBall();
-      }
-      
+     if (XboxController0.getStartButtonPressed()) {
+       RobotMap.intakeSpeedAdjusted = RobotMap.intakeSpeed;
+    //   if (RobotMap.rotationMode) {
+    //     magazine.rotateMagazine();
+    //     RobotMap.numberOfBalls--;
+    //   }
+    //   else {
+    //     // intake.intakeRoller.set(RobotMap.intakeSpeedAdjusted);
+    //     magazine.shootBall();
+    //   }
+    
     }
 
     if (XboxController0.getStartButtonReleased()) {
@@ -346,7 +346,7 @@ public class Robot extends TimedRobot {
     if (XboxController0.getBackButtonPressed()) {
       if (RobotMap.rotationMode) {
         magazine.rotateMagazine();
-        RobotMap.numberOfBalls++;
+        //RobotMap.numberOfBalls++;
 
       }
       else if (! RobotMap.activateSensor) {
@@ -355,19 +355,19 @@ public class Robot extends TimedRobot {
         //   RobotMap.intakeSpeedAdjusted = RobotMap.intakeSpeed / 2;
         // }
         
-        if (RobotMap.numberOfBalls == 0) {
-          tempIndexDelay = RobotMap.indexDelayAdjusted * 0.8;
-        }
-        if (RobotMap.numberOfBalls == 1) {
-          tempIndexDelay = RobotMap.indexDelayAdjusted;
-          // intake.intakeRoller.set(RobotMap.intakeSpeedAdjusted * 1.2);
-        }
-        if (RobotMap.numberOfBalls == 2) {
-          tempIndexDelay = RobotMap.indexDelayAdjusted * 0.4;
-        }
-        if (RobotMap.numberOfBalls == 3) {
-          tempIndexDelay = RobotMap.indexDelayAdjusted * 0.85;
-        }
+        // if (RobotMap.numberOfBalls == 0) {
+        //   tempIndexDelay = RobotMap.indexDelayAdjusted * 0.8;
+        // }
+        // if (RobotMap.numberOfBalls == 1) {
+        //   tempIndexDelay = RobotMap.indexDelayAdjusted;
+        //   // intake.intakeRoller.set(RobotMap.intakeSpeedAdjusted * 1.2);
+        // }
+        // if (RobotMap.numberOfBalls == 2) {
+        //   tempIndexDelay = RobotMap.indexDelayAdjusted * 0.4;
+        // }
+        // if (RobotMap.numberOfBalls == 3) {
+        //   tempIndexDelay = RobotMap.indexDelayAdjusted * 0.85;
+        // }
         // RobotMap.numberOfBalls++;
         magazine.magazineSpark.set(RobotMap.magazinePower);
         Timer.delay(tempIndexDelay);
@@ -376,7 +376,7 @@ public class Robot extends TimedRobot {
         // Timer.delay(RobotMap.indexDelayAdjusted);
         magazine.magazineSpark.set(0.0);
 
-      RobotMap.numberOfBalls++;
+     // RobotMap.numberOfBalls++;
       }
     }
 

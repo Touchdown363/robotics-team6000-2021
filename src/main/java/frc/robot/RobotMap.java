@@ -59,7 +59,7 @@ public class RobotMap {
 
   public static boolean delayIsAdjusted = false;
 
-  public static int numberOfBalls = 0;
+  //public static int numberOfBalls = 0;
 
   public static double magazineEncoder_RadiansPerPulse = 2*3.14/512; //Check, assume encoders have 512 pulse/rev
   public static double magazineEncoder_MaxPeriod = 1.0;
