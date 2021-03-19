@@ -285,7 +285,7 @@ public class Robot extends TimedRobot {
     if (XboxController0.getAButtonPressed()) {
     intake.intakeRoller.set(1 * RobotMap.intakeSpeed);
     }
-    if (XboxController0.getAButtonReleased()) {
+    if (XboxController0.getBButtonPressed()) {
       intake.intakeRoller.set(0.0);
       }
 /*
