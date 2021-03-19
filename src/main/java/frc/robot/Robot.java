@@ -16,8 +16,8 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Magazine;
 import frc.robot.subsystems.Shooter;
-import frc.robot.subsystems.Limelight;
-import edu.wpi.first.cameraserver.*;
+//import frc.robot.subsystems.Limelight;
+//import edu.wpi.first.cameraserver.*;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.XboxController;
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
 //  public static Elevator elevator;
   public static Magazine magazine;
   public static Shooter shooter;
-  public static Limelight limelight;
+ // public static Limelight limelight;
   public static double leftStickVal;
   public static double rightStickVal;
   public static Boolean autonomous;
@@ -70,9 +70,9 @@ public class Robot extends TimedRobot {
   public static String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private boolean m_LimelightHasValidTarget = false;
-  private double m_LimelightDriveCommand = 0.0;
-  private double m_LimelightSteerCommand = 0.0;
+  //private boolean m_LimelightHasValidTarget = false;
+  //private double m_LimelightDriveCommand = 0.0;
+ // private double m_LimelightSteerCommand = 0.0;
   
   
   @Override
@@ -83,13 +83,13 @@ public class Robot extends TimedRobot {
     //elevator = new Elevator();
     magazine = new Magazine();
     shooter = new Shooter();
-    limelight = new Limelight();
+    //limelight = new Limelight();
 
     XboxController0 = new XboxController(RobotMap.XboxController0);
     XboxController1 = new XboxController(RobotMap.XboxController1);
     
-    CameraServer.getInstance().startAutomaticCapture(0);
-    CameraServer.getInstance().startAutomaticCapture(1);
+    // CameraServer.getInstance().startAutomaticCapture(0);
+    // CameraServer.getInstance().startAutomaticCapture(1);
 
     // Resets index delay
     RobotMap.indexDelayAdjusted = RobotMap.indexDelay;
@@ -99,10 +99,10 @@ public class Robot extends TimedRobot {
 
     RobotMap.collectMode = false;
 //note: possibly comment out the next 2 lines
-    limelight.activateUSBCamera();
-    limelight.turnOffLED();
+    // limelight.activateUSBCamera();
+    // limelight.turnOffLED();
 
-    table.getEntry("ledMode").setNumber(1);
+    // table.getEntry("ledMode").setNumber(1);
 
 
     // Vision Initialization
@@ -127,7 +127,7 @@ public class Robot extends TimedRobot {
     // System.out.println("Number of Balls");
     // System.out.println(RobotMap.numberOfBalls);
 
-    limelight.refreshValues();
+    // limelight.refreshValues();
 
 
     // elevator.liftMotor.set(RobotMap.liftPower);
@@ -142,14 +142,14 @@ public class Robot extends TimedRobot {
     table.getEntry("stream").setNumber(0);
 
     // Read values periodically
-    double x = tx.getDouble(0.0);
-    double y = ty.getDouble(0.0);
-    double area = ta.getDouble(0.0);
+    //double x = tx.getDouble(0.0);
+   // double y = ty.getDouble(0.0);
+   // double area = ta.getDouble(0.0);
 
     // Post to smart dashboard periodically
-    SmartDashboard.putNumber("LimelightX", x);
-    SmartDashboard.putNumber("LimelightY", y);
-    SmartDashboard.putNumber("LimelightArea", area);
+    // SmartDashboard.putNumber("LimelightX", x);
+    // SmartDashboard.putNumber("LimelightY", y);
+    // SmartDashboard.putNumber("LimelightArea", area);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class Robot extends TimedRobot {
     changeAutonomous = false;
     super.autonomousInit();
 
-    limelight.m_autoSelected = limelight.m_chooser.getSelected();
+    // limelight.m_autoSelected = limelight.m_chooser.getSelected();
     m_autoSelected = m_chooser.getSelected();
 
     // intake.intakeExtender.set(0.6);
@@ -178,12 +178,12 @@ public class Robot extends TimedRobot {
     updateTrackingData();
 
     // Rotates about z-axis until it finds a target
-    if (m_LimelightHasValidTarget) {
-      drivetrain.drivetrain.arcadeDrive(-1 * m_LimelightDriveCommand, -1 * m_LimelightSteerCommand);
-    }
-    else {
-      drivetrain.turnAround();
-    }
+    // if (m_LimelightHasValidTarget) {
+    //   drivetrain.drivetrain.arcadeDrive(-1 * m_LimelightDriveCommand, -1 * m_LimelightSteerCommand);
+    // }
+    // else {
+    //   drivetrain.turnAround();
+    // }
 }
 
   @Override
@@ -201,7 +201,7 @@ public class Robot extends TimedRobot {
     System.out.println(magazine.magazineEncoder.getDistance());
     // Drivetrain
 
-    limelight.updateTrackingData();
+    // limelight.updateTrackingData();
 
     updateTrackingData();
 
@@ -212,12 +212,12 @@ public class Robot extends TimedRobot {
     if (RobotMap.autoMode) {
       // Turn on LED
       // table.getEntry("ledMode").setNumber(3);
-      if (m_LimelightHasValidTarget) {
-        drivetrain.drivetrain.arcadeDrive(-1 * m_LimelightDriveCommand, -1 * m_LimelightSteerCommand);
-      }
-      else {
-        drivetrain.drivetrain.arcadeDrive(0, 0);
-      }
+      // if (m_LimelightHasValidTarget) {
+      //   drivetrain.drivetrain.arcadeDrive(-1 * m_LimelightDriveCommand, -1 * m_LimelightSteerCommand);
+      // }
+      // else {
+      //   drivetrain.drivetrain.arcadeDrive(0, 0);
+      // }
 
       // Fine tuning - yaw (about z-axis)
       double fineYaw = RobotMap.fineDrivetrainPower * (Math.pow(XboxController1.getX(Hand.kRight), 3));
@@ -248,7 +248,7 @@ public class Robot extends TimedRobot {
 
     // Intake
 
-    intake.intakeRoller.set(XboxController0.getTriggerAxis(Hand.kLeft) * RobotMap.intakeSpeed);
+    //intake.intakeRoller.set(XboxController0.getTriggerAxis(Hand.kLeft) * RobotMap.intakeSpeed);
   
 
     // Left Bumper - Straight Forward
@@ -282,7 +282,12 @@ public class Robot extends TimedRobot {
     if (XboxController1.getXButtonPressed()) {
       RobotMap.collectMode = ! RobotMap.collectMode;
     }
-
+    if (XboxController0.getAButtonPressed()) {
+    intake.intakeRoller.set(1 * RobotMap.intakeSpeed);
+    }
+    if (XboxController0.getAButtonReleased()) {
+      intake.intakeRoller.set(0.0);
+      }
 /*
     if (XboxController1.getAButton()) {
       System.out.println("Extending...");
@@ -435,7 +440,7 @@ public class Robot extends TimedRobot {
   
 
   public void updateTrackingData() {
-    final double STEER_K = 0.1;                         // how hard to turn toward the target
+    //final double STEER_K = 0.1;                         // how hard to turn toward the target
     final double DRIVE_K = 0.4;                         // how hard to drive fwd toward the target
     final double DESIRED_TARGET_AREA = 1.7;             // Area of the target when the robot reaches the wall
     final double MAX_DRIVE = RobotMap.drivetrainPower;  // Simple speed limit so we don't drive too fast
@@ -455,31 +460,31 @@ public class Robot extends TimedRobot {
     table.getEntry("stream").setNumber(0);
 
     // Read values periodically
-    double x = tx.getDouble(0.0);
-    double y = ty.getDouble(0.0);
+   // double x = tx.getDouble(0.0);
+   // double y = ty.getDouble(0.0);
     double v = tv.getDouble(0.0);
     double area = ta.getDouble(0.0);
 
 
 
     // Post to smart dashboard periodically
-    SmartDashboard.putNumber("LimelightX", x);
-    SmartDashboard.putNumber("LimelightY", y);
-    SmartDashboard.putNumber("LimelightArea", area);
+    // SmartDashboard.putNumber("LimelightX", x);
+    // SmartDashboard.putNumber("LimelightY", y);
+    // SmartDashboard.putNumber("LimelightArea", area);
 
     if (v < 1.0) {
-      m_LimelightHasValidTarget = false;
-      m_LimelightDriveCommand = 0.0;
-      m_LimelightSteerCommand = 0.0;
+     // m_LimelightHasValidTarget = false;
+     // m_LimelightDriveCommand = 0.0;
+     // m_LimelightSteerCommand = 0.0;
       return;
     }
 
-    m_LimelightHasValidTarget = true;
+    //m_LimelightHasValidTarget = true;
     System.out.println("TARGET FOUND");
 
     // Start with proportional steering
-    double steer_cmd = x * STEER_K;
-    m_LimelightSteerCommand = steer_cmd;
+    //double steer_cmd = x * STEER_K;
+   // m_LimelightSteerCommand = steer_cmd;
 
     // try to drive forward until the target area reaches our desired area
     double drive_cmd = (DESIRED_TARGET_AREA - area) * DRIVE_K;
@@ -488,7 +493,7 @@ public class Robot extends TimedRobot {
     if (drive_cmd > MAX_DRIVE) {
       drive_cmd = MAX_DRIVE;
     }
-    m_LimelightDriveCommand = drive_cmd;
+    //m_LimelightDriveCommand = drive_cmd;
   }
   
 
