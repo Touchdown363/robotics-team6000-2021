@@ -28,6 +28,12 @@ public class RobotMap {
   public static double fineDrivetrainPower = 0.8;
 
 
+
+//main Autonomous
+//public static int LineSensor1 = 10;
+//public static int LineSensor2 = 11;
+//public static int LineSensor3 = 12;
+
   // Shooter
   //public static int topShooter = 4;
  // public static int bottomShooter = 2;
